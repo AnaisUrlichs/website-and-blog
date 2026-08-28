@@ -56,6 +56,7 @@ body {
   position: relative;
   z-index: 1;
   width: min(680px, 100%);
+  background: var(--card);
   background: color-mix(in srgb, var(--card) 85%, white 15%);
   border: 1px solid var(--line);
   border-radius: 20px;
@@ -117,7 +118,9 @@ p {
   font-family: "Space Grotesk", sans-serif;
   font-size: 0.95rem;
   color: var(--accent-ink);
+  border: 1px solid #abd1ca;
   border: 1px solid color-mix(in srgb, var(--accent) 35%, white 65%);
+  background: #eaf5f2;
   background: color-mix(in srgb, var(--accent) 12%, white 88%);
   padding: 0.45rem 0.8rem;
   border-radius: 999px;
@@ -128,6 +131,11 @@ p {
 .links a:focus-visible {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgb(6 69 60 / 0.2);
+}
+
+.links a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 footer {
@@ -156,6 +164,17 @@ footer {
 
   50% {
     transform: translateY(-12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-orb,
+  .card {
+    animation: none;
+  }
+
+  .links a {
+    transition: none;
   }
 }
 
